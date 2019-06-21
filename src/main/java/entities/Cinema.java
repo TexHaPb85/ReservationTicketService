@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.List;
+
 public class Cinema {
     private String name;
     private String address;
@@ -12,6 +13,17 @@ public class Cinema {
         this.address = address;
         this.rating = rating;
         this.movieList = movieList;
+    }
+
+    public Cinema() {
+    }
+
+    public String getListOfMovies(){
+        StringBuilder sb = new StringBuilder("List of cinemas: \n");
+        movieList.stream().forEach(m->{
+            sb.append(m.toString()).append("\n");
+        });
+        return sb.toString();
     }
 
     public String getName() {
@@ -45,6 +57,8 @@ public class Cinema {
     public void setMovieList(List<Movie> movieList) {
         this.movieList = movieList;
     }
+
+
 
     @Override
     public String toString() {

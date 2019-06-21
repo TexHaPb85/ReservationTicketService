@@ -3,11 +3,11 @@ package entities;
 import java.util.Date;
 
 /**
- * Booking - booked date, payment status (paid, unpaid), booked movies, amount
+ * бронювання
  */
 public class Booking {
     private Date bookedDate;
     private boolean isPaid;
-    //booked movies
+    private Movie bookedMovie; //(-s)
     //amount
 }
