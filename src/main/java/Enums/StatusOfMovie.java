@@ -4,6 +4,6 @@ package Enums;
 public enum StatusOfMovie {
     prePremiere,
     premiere,
-    available;
-
+    available,
+    defaultStatus;
 }

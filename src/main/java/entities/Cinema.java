@@ -21,7 +21,7 @@ public class Cinema {
     public String getListOfMovies(){
         StringBuilder sb = new StringBuilder("List of cinemas: \n");
         movieList.stream().forEach(m->{
-            sb.append(m.toString()).append("\n");
+            sb.append("\t"+m.toString()).append("\n");
         });
         return sb.toString();
     }
@@ -62,8 +62,7 @@ public class Cinema {
 
     @Override
     public String toString() {
-        return "Cinema{" +
-                "name='" + name + '\'' +
+        return "Cinema:" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", rating=" + rating +
                 ", movieList=" + movieList +
