@@ -1,10 +1,8 @@
-import entities.Cinema;
-import services.SelectCinemaService;
+import services.GlobalCinemaService;
 
 public class Main {
     public static void main(String[] args) {
-        SelectCinemaService cinemaShower = new SelectCinemaService();
-
-
+        GlobalCinemaService service = new GlobalCinemaService();
+        service.demo();
     }
 }

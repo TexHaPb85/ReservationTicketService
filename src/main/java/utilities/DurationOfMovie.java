@@ -1,7 +1,6 @@
-package entities;
+package utilities;
 
-import abstractions.RandomGenerator;
-import services.RandomGeneratorService;
+import java.util.Random;
 
 public class DurationOfMovie {
     public String fromTime;
@@ -13,9 +12,9 @@ public class DurationOfMovie {
     }
 
     public DurationOfMovie() {
-        RandomGenerator rg = new RandomGeneratorService();
-        int h = rg.intRandom(0,24);
-        int m = rg.intRandom(0,60);
+        Random random = new Random();
+        int h = random.nextInt(24);
+        int m = random.nextInt(60);
         this.fromTime = h+":"+m;
         this.toTime = (h+2)+":"+m;
     }

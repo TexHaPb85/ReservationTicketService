@@ -1,5 +1,5 @@
 package Enums;
 
-public enum TypeOfPalce {
+public enum TypeOfPlace {
     normal, premiusm, VIP;
 }

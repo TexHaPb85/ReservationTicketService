@@ -1,11 +1,11 @@
 package entities;
 
-import Enums.TypeOfPalce;
+import Enums.TypeOfPlace;
 
 public class Hall {
     private String number;
     private int amountOfPlaces;
-    public TypeOfPalce typeOfPalce;  //type of place(normal, premium, vip),
+    private TypeOfPlace typeOfPlace;  //type of place(normal, premium, vip),
 
 
 }
