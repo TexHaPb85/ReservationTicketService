@@ -42,12 +42,20 @@ public class User {
         this.password = password;
     }
 
+    public String getStudentsTiketNumber() {
+        return studentsTiketNumber;
+    }
+
+    public void setStudentsTiketNumber(String studentsTiketNumber) {
+        this.studentsTiketNumber = studentsTiketNumber;
+    }
+
     @Override
     public String toString() {
-        return  "login='" + login + '\'' +
+        return  "\nlogin='" + login + '\'' +
                 ", password='" + password + '\'' +
                 //", bookings=" + bookings +
-                ", studentsTiketNumber='" + studentsTiketNumber+'\'';
+                ", studentsTiketNumber='" + studentsTiketNumber+"\'";
 
     }
 }

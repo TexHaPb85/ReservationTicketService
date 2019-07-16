@@ -10,5 +10,5 @@ public interface UserDAO {
 
     boolean isRegistered(User user);
 
-    List<User> getAllUsers();
+    void setAllUsers();
 }

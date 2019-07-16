@@ -14,6 +14,7 @@ public class GlobalCinemaService {
         selectCinemaService = new SelectCinemaService();
         randomService = new RandomMovieGenerator();
         scanner = new Scanner(System.in);
+
         selectCinemaService.addCinema(new Cinema("Batterfly", "Vadyma Getmana str. 43", 4.4, randomService.getRandomMovieList())).
                 addCinema(new Cinema("Leypcig", "Cosmosa Heroes str. 23", 4.1, randomService.getRandomMovieList())).
                 addCinema(new Cinema("Ocean Plaza", "Teremky str. 42", 4.8, randomService.getRandomMovieList()));

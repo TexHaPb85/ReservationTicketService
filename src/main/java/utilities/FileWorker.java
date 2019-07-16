@@ -2,6 +2,8 @@ package utilities;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FileWorker {
@@ -28,5 +30,17 @@ public class FileWorker {
         }
 
         return sb.toString();
+    }
+
+    public static void writeToFile(File f, String text){
+        try(FileWriter writer = new FileWriter(f, false))
+        {
+            writer.write(text+"\n");
+            writer.flush();
+            writer.close();
+        }
+        catch(IOException ex){
+            ex.printStackTrace();
+        }
     }
 }
