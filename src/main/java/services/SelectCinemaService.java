@@ -3,7 +3,7 @@ package services;
 import abstractions.CinemaShower;
 import entities.Cinema;
 import entities.Movie;
-import utilities.Comparators;
+import comparators.CinemaComparatorByRatingDESC;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class SelectCinemaService implements CinemaShower {
     }
 
     public void sortCinemasByRating(){
-        cinemaList.sort(new Comparators.CinemaComparatorByRatingDESC());
+        cinemaList.sort(new CinemaComparatorByRatingDESC());
     }
 
     public List<Movie> getMoviesOfCategory(String category) {
