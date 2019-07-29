@@ -15,6 +15,12 @@ public class Place {
         this.price = price;
     }
 
+    public Place() {
+        this.placeNumber = -1;
+        this.type = TypeOfPlace.normal;
+        this.price = new BigDecimal(0);
+    }
+
     public int getPlaceNumber() {
         return placeNumber;
     }

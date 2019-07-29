@@ -7,6 +7,7 @@ import entities.reservation.Cinema;
 import entities.reservation.Hall;
 import entities.reservation.Movie;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -65,7 +66,8 @@ public class RandomListGenerator implements RandomGenerator {
         List<Hall> halls = new ArrayList<>();
         classicHallNumbers.stream().limit(intRandom(3,9)).forEach(hallName->{
             int amountOfPlaces = intRandom(4,14)*10;
-            halls.add(new Hall(hallName,amountOfPlaces));
+            BigDecimal price = new BigDecimal(intRandom(4,20)*10);
+            halls.add(new Hall(hallName,amountOfPlaces,price));
         });
         return halls;
     }

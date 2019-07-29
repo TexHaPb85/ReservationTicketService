@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface CinemaShower {
 
-    String getListOfCinemas();
+    String showListOfCinemas();
 
-    String getListOfFilmsByIndex(int numberOfCinema);
+    String showShowingListInCinema(int numberOfCinema);
 
-    List<Movie> getMovieListInCinma(int indexOfCinema);
+    List<Movie> getMovieListInCinema(int indexOfCinema);
 }

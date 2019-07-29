@@ -1,5 +1,6 @@
 package entities.reservation;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class Cinema {
         this.movieList = movieList;
         this.halls = halls;
         this.dailyMovieSchedule = new ArrayList<>();
+
+        makeSchedule();
     }
 
     public List<Movie> addMovie(Movie m) {
@@ -31,17 +34,34 @@ public class Cinema {
         return this.halls;
     }
 
-    private void makeSchedule(){
-        int filmsInOneHall = (movieList.size()*4)/halls.size();
-
+    /**
+     * this method will create random schedule for a week in Cinema
+     */
+    private void makeSchedule() {
+        int hallPointer = 0;
+        int plusHours = 0;
+        for (int i = 0; i < movieList.size(); i++) {
+            dailyMovieSchedule.add(
+                    new MovieShowing(LocalDate.now().atTime(9, 0).plusHours(plusHours),
+                            this,
+                            halls.get(hallPointer),
+                            movieList.get(i)));
+            if (hallPointer < movieList.size() - 2) {
+                hallPointer++;
+            } else {
+                plusHours++;
+                hallPointer = 0;
+            }
+        }
     }
 
-    public String getListOfMovies() {
+
+    public String getListOfShowings() {
         StringBuilder sb = new StringBuilder("List of movies in " + name + " cinema: \n");
-        sb.append("(press number of movie to book ticket or '0' to return in main menu)\n");
+        sb.append("(press number of movie to book ticket, or '0' to return in main menu)\n");
         sb.append("0. Exit\n");
-        for (int i = 0; i < movieList.size(); i++) {
-            sb.append(i + 1).append(". ").append(movieList.get(i).toString()).append("\n");
+        for (int i = 0; i < dailyMovieSchedule.size(); i++) {
+            sb.append(i + 1).append(". ").append(dailyMovieSchedule.get(i).toString()).append("\n");
         }
         return sb.toString();
     }
@@ -82,8 +102,18 @@ public class Cinema {
         return movieList;
     }
 
+
+
     public void setMovieList(List<Movie> movieList) {
         this.movieList = movieList;
+    }
+
+    public List<MovieShowing> getDailyMovieSchedule() {
+        return dailyMovieSchedule;
+    }
+
+    public void setDailyMovieSchedule(List<MovieShowing> dailyMovieSchedule) {
+        this.dailyMovieSchedule = dailyMovieSchedule;
     }
 
     @Override

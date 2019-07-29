@@ -11,39 +11,52 @@ public class Hall {
     private int amountOfPlaces;
     private Map<Place, Boolean> bookedPlaces;
 
-    public Hall(String number, int amountOfPlaces) {
+    public Hall(String number, int amountOfPlaces, BigDecimal normalTicketPrice) {
         this.bookedPlaces = new LinkedHashMap<>();
         this.number = number;
         this.amountOfPlaces = amountOfPlaces;
+
+        fillBookedPlacesList(normalTicketPrice);
+    }
+
+    public Place bookPlaceByNumber(int number) {
+        Place bookingPlace = new Place();
+        for (Place place : bookedPlaces.keySet()) {
+            if (place.getPlaceNumber() == number) {
+                bookedPlaces.put(place, true);
+                bookingPlace=place;
+            }
+        }
+        return bookingPlace;
     }
 
     private void fillBookedPlacesList(BigDecimal normalTicketPrice) {
         for (int i = 1; i <= amountOfPlaces; i++) {
-            if(i<amountOfPlaces/8){
+            if (i < amountOfPlaces / 8) {
                 BigDecimal priceOfTicket = normalTicketPrice.multiply(BigDecimal.valueOf(1.5));
                 Place place = new Place(i, TypeOfPlace.VIP, priceOfTicket);
-                bookedPlaces.put(place,false);
-            }else if(i<amountOfPlaces/2){
+                bookedPlaces.put(place, false);
+            } else if (i < amountOfPlaces / 2) {
                 BigDecimal priceOfTicket = normalTicketPrice.multiply(BigDecimal.valueOf(1.2));
                 Place place = new Place(i, TypeOfPlace.premium, priceOfTicket);
-                bookedPlaces.put(place,false);
-            }else {
+                bookedPlaces.put(place, false);
+            } else {
                 Place place = new Place(i, TypeOfPlace.normal, normalTicketPrice);
-                bookedPlaces.put(place,false);
+                bookedPlaces.put(place, false);
             }
         }
     }
 
-    public void showBookedPlaces(){
-        StringBuilder sb = new StringBuilder("Hall: "+number+"\n");
+    public void showBookedPlaces() {
+        StringBuilder sb = new StringBuilder("Hall: " + number + "\n");
         int numOfPlacesInOneRow = (int) Math.sqrt(amountOfPlaces);
         bookedPlaces.forEach((place, isBooked) -> {
-            if(!isBooked){
-                sb.append(place.getType().getSigh()+" ");
-            }else {
-                sb.append("# ");
+            if (!isBooked) {
+                sb.append(place.getType().getSigh() + place.getPlaceNumber() + " ");
+            } else {
+                sb.append(place.getType().getSigh() + place.getPlaceNumber() + "# ");
             }
-            if((place.getPlaceNumber()+1)%numOfPlacesInOneRow==0) {
+            if ((place.getPlaceNumber() + 1) % numOfPlacesInOneRow == 0) {
                 sb.append("\n");
             }
         });

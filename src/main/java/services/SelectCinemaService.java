@@ -39,7 +39,7 @@ public class SelectCinemaService implements CinemaShower {
     }
 
     @Override
-    public String getListOfCinemas() {
+    public String showListOfCinemas() {
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= cinemaList.size(); i++) {
             sb.append(i + ". " + cinemaList.get(i - 1) + "\n");
@@ -48,13 +48,13 @@ public class SelectCinemaService implements CinemaShower {
     }
 
     @Override
-    public List<Movie> getMovieListInCinma(int indexOfCinema) {
+    public List<Movie> getMovieListInCinema(int indexOfCinema) {
         return cinemaList.get(indexOfCinema).getMovieList();
     }
 
     @Override
-    public String getListOfFilmsByIndex(int indexOfCinema) {
-        return cinemaList.get(indexOfCinema).getListOfMovies();
+    public String showShowingListInCinema(int indexOfCinema) {
+        return cinemaList.get(indexOfCinema).getListOfShowings();
     }
 
     public List<Cinema> getCinemaList() {

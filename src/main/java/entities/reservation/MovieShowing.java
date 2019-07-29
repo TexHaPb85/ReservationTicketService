@@ -1,26 +1,26 @@
 package entities.reservation;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class MovieShowing {
-    private LocalDate bookedDate;
+    private LocalDateTime showingDate;
     private Cinema cinemaOfMovie;
     private Hall hallOfMovie;
-    private Movie bookedMovie;
+    private Movie showingMovie;
 
-    public MovieShowing(LocalDate bookedDate, Cinema cinemaOfMovie, Hall hallOfMovie, Movie bookedMovie) {
-        this.bookedDate = bookedDate;
+    public MovieShowing(LocalDateTime showingDate, Cinema cinemaOfMovie, Hall hallOfMovie, Movie showingMovie) {
+        this.showingDate = showingDate;
         this.cinemaOfMovie = cinemaOfMovie;
         this.hallOfMovie = hallOfMovie;
-        this.bookedMovie = bookedMovie;
+        this.showingMovie = showingMovie;
     }
 
-    public LocalDate getBookedDate() {
-        return bookedDate;
+    public LocalDateTime getShowingDate() {
+        return showingDate;
     }
 
-    public void setBookedDate(LocalDate bookedDate) {
-        this.bookedDate = bookedDate;
+    public void setShowingDate(LocalDateTime showingDate) {
+        this.showingDate = showingDate;
     }
 
     public Cinema getCinemaOfMovie() {
@@ -39,11 +39,16 @@ public class MovieShowing {
         this.hallOfMovie = hallOfMovie;
     }
 
-    public Movie getBookedMovie() {
-        return bookedMovie;
+    public Movie getShowingMovie() {
+        return showingMovie;
     }
 
-    public void setBookedMovie(Movie bookedMovie) {
-        this.bookedMovie = bookedMovie;
+    public void setShowingMovie(Movie showingMovie) {
+        this.showingMovie = showingMovie;
+    }
+
+    @Override
+    public String toString() {
+        return showingMovie.getName() + " date: " + showingDate;
     }
 }

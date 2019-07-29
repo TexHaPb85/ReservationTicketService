@@ -58,9 +58,9 @@ public class Booking {
             sb.append(" not paid, to pay: " + place.getPrice());
         }
         sb.append("\n******************************");
-        sb.append("\nMovie: "+movieShowing.getBookedMovie().getName());
+        sb.append("\nMovie: "+movieShowing.getShowingMovie().getName());
         sb.append("\n******************************");
-        sb.append("\nDate: " + movieShowing.getBookedDate());
+        sb.append("\nDate: " + movieShowing.getShowingDate());
         sb.append("\nCinema: " + movieShowing.getCinemaOfMovie().getName());
         sb.append("\nHall: "+movieShowing.getHallOfMovie());
         sb.append("\nPlace: "+ place.getType() +" number:" +place.getPlaceNumber());
