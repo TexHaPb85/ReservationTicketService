@@ -1,64 +1,69 @@
 package services;
 
-import entities.Cinema;
-import utilities.RandomMovieGenerator;
+import entities.User;
 
 import java.util.Scanner;
 
 public class GlobalCinemaService {
-    private SelectCinemaService selectCinemaService;
-    private RandomMovieGenerator randomService;
+    public static User currentUser;
+
+    private UserService userService;
+    private BookingService bookingService;
     private Scanner scanner;
 
     public GlobalCinemaService() {
-        selectCinemaService = new SelectCinemaService();
-        randomService = new RandomMovieGenerator();
+        currentUser=new User();
         scanner = new Scanner(System.in);
 
-        selectCinemaService.addCinema(new Cinema("Batterfly", "Vadyma Getmana str. 43", 4.4, randomService.getRandomMovieList())).
-                addCinema(new Cinema("Leypcig", "Cosmosa Heroes str. 23", 4.1, randomService.getRandomMovieList())).
-                addCinema(new Cinema("Ocean Plaza", "Teremky str. 42", 4.8, randomService.getRandomMovieList()));
+        userService=new UserService();
+        bookingService= new BookingService(scanner);
     }
 
-    public void chooseCinema() {
-        System.out.println("Would you like to sort cinemas by rating before show them?(yes/no)");
-        if(scanner.next().equals("yes"))
-            selectCinemaService.sortCinemasByRating();
-        System.out.println("Choose the cinema:");
-        System.out.println(selectCinemaService.getListOfCinemas());
-        System.out.println(selectCinemaService.getListOfFilmsInSelectedCinema(scanner.nextInt() - 1));
+    public boolean start() {
+        System.out.println("Hello, "+currentUser.getLogin()+", choose the option:\n" +
+                "0. Log in.\n"+
+                "1. Select cinema and see its movie list.\n" +
+                "2. Search movies by category\n" +
+                "3. Book places for a movie\n"+
+                "7. Sign up\n"+
+                "9. Exit");
+        switch (scanner.next()) {
+            case "0":
+                userService.logIn(scanner);
+                break;
+            case "1":
+                bookingService.chooseCinema();
+                break;
+            case "2":
+                bookingService.chooseCategory();
+                break;
+            case "3":
+                bookPlaces();
+                break;
+            case "7":
+                register();
+                userService.logIn(scanner);
+                break;
+            case "9":
+                return false;
+            default:
+                System.out.println("wrong option");
+        }
+        start();
+        return true;
     }
 
-    public void chooseCategory() {
-        System.out.println("Enter category");
-        String category = scanner.next();
-        selectCinemaService.getMoviesOfCategory(category).forEach(System.out::println);
-    }
-
-    public void choosePlaces() {
+    private void bookPlaces() {
         System.out.println("Developing...");
     }
 
-    public boolean demo() {
-        System.out.println("Choose the option:\n" +
-                "1. Select cinema and see its movie list.\n" +
-                "2. Search movies by category\n" +
-                "3. Select places");
-        switch (scanner.next()) {
-            case "1":
-                chooseCinema();
-                break;
-            case "2":
-                chooseCategory();
-                break;
-            case "3":
-                choosePlaces();
-                break;
-            default:
-                System.out.println("wrong option");
-                return false;
-        }
-        demo();
-        return true;
+    private void register(){
+        System.out.println("Enter your new login");
+        String login = scanner.next();
+        System.out.println("Enter your new password");
+        String password = scanner.next();
+        System.out.println("If you are student enter your student`s ticket number or if yor aren`t enter '-'");
+        String tiketNum = scanner.next();
+        userService.registerUser(new User(login,password,tiketNum));
     }
 }

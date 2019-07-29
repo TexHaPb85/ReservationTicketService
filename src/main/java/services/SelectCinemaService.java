@@ -1,8 +1,8 @@
 package services;
 
 import abstractions.CinemaShower;
-import entities.Cinema;
-import entities.Movie;
+import entities.reservation.Cinema;
+import entities.reservation.Movie;
 import comparators.CinemaComparatorByRatingDESC;
 
 import java.util.ArrayList;
@@ -10,10 +10,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SelectCinemaService implements CinemaShower {
+
     private List<Cinema> cinemaList;
 
     public SelectCinemaService() {
-        this.cinemaList = new ArrayList();
+        this.cinemaList = new ArrayList<>();
+    }
+
+    public SelectCinemaService(List<Cinema> cinemaList) {
+        this.cinemaList = cinemaList;
     }
 
     public SelectCinemaService addCinema(Cinema cinema) {
@@ -43,8 +48,13 @@ public class SelectCinemaService implements CinemaShower {
     }
 
     @Override
-    public String getListOfFilmsInSelectedCinema(int numberOfCinema) {
-        return cinemaList.get(numberOfCinema).getListOfMovies();
+    public List<Movie> getMovieListInCinma(int indexOfCinema) {
+        return cinemaList.get(indexOfCinema).getMovieList();
+    }
+
+    @Override
+    public String getListOfFilmsByIndex(int indexOfCinema) {
+        return cinemaList.get(indexOfCinema).getListOfMovies();
     }
 
     public List<Cinema> getCinemaList() {

@@ -1,9 +1,6 @@
 package utilities;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class FileWorker {
@@ -32,12 +29,27 @@ public class FileWorker {
         return sb.toString();
     }
 
-    public static void writeToFile(File f, String text){
-        try(FileWriter writer = new FileWriter(f, false))
+    public static void writeToFile(String filePath, String text){
+        try(FileWriter fileWriter = new FileWriter(filePath, true))
         {
-            writer.write(text+"\n");
+            BufferedWriter writer =new BufferedWriter(fileWriter);
+            writer.write(text);
             writer.flush();
             writer.close();
+            System.out.println(text+" appended to file "+filePath);
+        }
+        catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public static void writeToFile(File f, String text){
+        try(FileWriter writer = new FileWriter(f, true))
+        {
+            writer.write(text);
+            writer.flush();
+            writer.close();
+            System.out.println(text+" appended to file "+f.getPath());
         }
         catch(IOException ex){
             ex.printStackTrace();

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserDAO {
 
-    void addUser(User user);
+    void registerUser(User user);
 
     boolean isRegistered(User user);
 

@@ -1,8 +1,14 @@
 package abstractions;
 
+import entities.reservation.Movie;
+
+import java.util.List;
+
 public interface CinemaShower {
 
     String getListOfCinemas();
 
-    String getListOfFilmsInSelectedCinema(int numberOfCinema);
+    String getListOfFilmsByIndex(int numberOfCinema);
+
+    List<Movie> getMovieListInCinma(int indexOfCinema);
 }

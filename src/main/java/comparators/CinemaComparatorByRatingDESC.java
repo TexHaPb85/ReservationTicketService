@@ -1,6 +1,6 @@
 package comparators;
 
-import entities.Cinema;
+import entities.reservation.Cinema;
 
 import java.util.Comparator;
 
