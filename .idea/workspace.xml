@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd311e13-27a3-41fe-897c-4c4b709d1298" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Enums/TypeOfMovie.class" afterPath="$PROJECT_DIR$/target/classes/Enums/TypeOfMovie.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Enums/TypeOfPlace.class" afterPath="$PROJECT_DIR$/target/classes/Enums/TypeOfPlace.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/services/GlobalCinemaService.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/abstractions/CinemaShower.class" afterPath="$PROJECT_DIR$/target/classes/abstractions/CinemaShower.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/SelectCinemaService.class" afterPath="$PROJECT_DIR$/target/classes/services/SelectCinemaService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/abstractions/CinemaShower.java" afterPath="$PROJECT_DIR$/src/main/java/abstractions/CinemaShower.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/User.java" afterPath="$PROJECT_DIR$/src/main/java/entities/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java" afterPath="$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/reservation/Cinema.java" afterPath="$PROJECT_DIR$/src/main/java/entities/reservation/Cinema.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java" afterPath="$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java" afterPath="$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/reservation/Place.java" afterPath="$PROJECT_DIR$/src/main/java/entities/reservation/Place.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/BookingService.java" afterPath="$PROJECT_DIR$/src/main/java/services/BookingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java" afterPath="$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java" afterPath="$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utilities/FileWorker.java" afterPath="$PROJECT_DIR$/src/main/java/utilities/FileWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utilities/RandomListGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/utilities/RandomListGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/users.txt" afterPath="$PROJECT_DIR$/src/main/resources/users.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,50 +32,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Cinema.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Cinema.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1038">
-              <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2745#2746#0" expanded="true" />
-                <element signature="e#2777#2778#0" expanded="true" />
-                <element signature="e#2933#2934#0" expanded="true" />
-                <element signature="e#2974#2975#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1564329302458" expanded="true" signature="158:247" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="users.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/users.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+            <state relative-caret-position="187">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hall.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding>
+                <element signature="method#logIn#0;class#UserService#0" expanded="false" />
+                <element signature="method#registerNewUser#0;class#UserService#0" expanded="false" />
+                <element signature="method#isRegistered#0;class#UserService#0" expanded="false" />
+                <element signature="method#setAllUsers#0;class#UserService#0" expanded="false" />
+                <element signature="method#getUsers#0;class#UserService#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hall.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            <state relative-caret-position="187">
+              <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookingService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/BookingService.java">
+      <file leaf-file-name="Movie.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Movie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="68">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,68 +85,11 @@
       <file leaf-file-name="MovieShowing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
               <folding>
-                <element signature="e#556#557#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomListGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilities/RandomListGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
-              <folding>
-                <element signature="method#RandomListGenerator#0;class#RandomListGenerator#0" expanded="false" />
-                <element signature="method#setMovies#0;class#RandomListGenerator#0" expanded="false" />
-                <element signature="method#setCinemas#0;class#RandomListGenerator#0" expanded="false" />
-                <element signature="method#getRandomMovieList#0;class#RandomListGenerator#0" expanded="false" />
-                <element signature="method#getCinemaList#0;class#RandomListGenerator#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectCinemaService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-              <folding>
-                <element signature="method#addCinema#0;class#SelectCinemaService#0" expanded="false" />
-                <element signature="method#getMoviesOfCategory#0;class#SelectCinemaService#0" expanded="false" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1455#1456#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Place.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Place.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,14 +123,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/users" />
         <option value="$PROJECT_DIR$/src/main/java/dao/LoginDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/LoginService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilities/RandomMovieGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilities/RandomGenerator.java" />
         <option value="$PROJECT_DIR$/users.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/utilities/FileWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/users.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Cinema.java" />
         <option value="$PROJECT_DIR$/src/main/java/abstractions/CinemaShower.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Booking.java" />
@@ -202,19 +133,24 @@
         <option value="$PROJECT_DIR$/src/main/java/entities/Movie.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/Hall.java" />
         <option value="$PROJECT_DIR$/src/main/java/Enums/TypeOfMovie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Enums/TypeOfPlace.java" />
-        <option value="$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entities/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Movie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Place.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Cinema.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/BookingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utilities/FileWorker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/users.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilities/RandomListGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/BookingService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entities/User.java" />
       </list>
     </option>
   </component>
@@ -507,7 +443,7 @@
       <workItem from="1564239281788" duration="37000" />
       <workItem from="1564239439690" duration="377000" />
       <workItem from="1564239895983" duration="714000" />
-      <workItem from="1564240960132" duration="29161000" />
+      <workItem from="1564240960132" duration="37879000" />
     </task>
     <task id="LOCAL-00001" summary="file worker can`t append text correctly">
       <created>1563277675485</created>
@@ -523,11 +459,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564395114249</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="booking version 2">
+      <created>1564426279899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564426279899</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65420000" />
+    <option name="totallyTimeSpent" value="74138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -542,7 +485,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6694079" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -626,7 +569,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="file worker can`t append text correctly" />
     <MESSAGE value="booking version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="booking version 1" />
+    <MESSAGE value="booking version 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="booking version 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -698,14 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/io/BufferedWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -749,16 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="method#register#0;class#GlobalCinemaService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/abstractions/CinemaChooser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -773,22 +699,6 @@
           <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#UserService#0;class#UserService#0" expanded="false" />
-            <element signature="method#logIn#0;class#UserService#0" expanded="false" />
-            <element signature="method#registerUser#0;class#UserService#0" expanded="false" />
-            <element signature="method#isRegistered#0;class#UserService#0" expanded="false" />
-            <element signature="method#setAllUsers#0;class#UserService#0" expanded="false" />
-            <element signature="method#getUsers#0;class#UserService#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -835,21 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="method#User#2;class#User#0" expanded="false" />
-            <element signature="method#setAditionalInfo#0;class#User#0" expanded="false" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1613#1614#0" expanded="true" />
-            <element signature="method#setStudentsTicketNumber#0;class#User#0" expanded="false" />
-            <element signature="method#toString#0;class#User#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utilities/DurationOfMovie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -874,24 +769,6 @@
             <element signature="e#29568#29569#0" expanded="false" />
             <element signature="e#29634#29635#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Movie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -927,17 +804,9 @@
         <state relative-caret-position="194">
           <caret line="1722" column="25" lean-forward="false" selection-start-line="1722" selection-start-column="25" selection-end-line="1722" selection-end-column="25" />
           <folding>
-            <element signature="e#78587#78588#0" expanded="true" />
-            <element signature="e#78644#78645#0" expanded="true" />
+            <element signature="e#78587#78588#0" expanded="false" />
+            <element signature="e#78644#78645#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/FileWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,103 +820,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#556#557#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="59" column="20" lean-forward="false" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-          <folding>
-            <element signature="method#addCinema#0;class#SelectCinemaService#0" expanded="false" />
-            <element signature="method#getMoviesOfCategory#0;class#SelectCinemaService#0" expanded="false" />
-            <element signature="e#1388#1389#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Cinema.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1038">
-          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        <state relative-caret-position="273">
+          <caret line="52" column="32" lean-forward="false" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2745#2746#0" expanded="true" />
-            <element signature="e#2777#2778#0" expanded="true" />
-            <element signature="e#2933#2934#0" expanded="true" />
-            <element signature="e#2974#2975#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <caret line="15" column="115" lean-forward="false" selection-start-line="15" selection-start-column="115" selection-end-line="15" selection-end-column="115" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1564329302458" expanded="true" signature="158:247" ph="..." />
+            <marker date="1564486714405" expanded="true" signature="103:192" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/GlobalCinemaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilities/FileWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/SelectCinemaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="56" column="53" lean-forward="true" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+          <folding>
+            <element signature="method#addCinema#0;class#SelectCinemaService#0" expanded="false" />
+            <element signature="method#getMoviesOfCategory#0;class#SelectCinemaService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/abstractions/RandomGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#674#675#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utilities/RandomListGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="69" column="60" lean-forward="false" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+        <state relative-caret-position="154">
+          <caret line="68" column="112" lean-forward="false" selection-start-line="68" selection-start-column="112" selection-end-line="68" selection-end-column="112" />
           <folding>
             <element signature="method#RandomListGenerator#0;class#RandomListGenerator#0" expanded="false" />
-            <element signature="method#setMovies#0;class#RandomListGenerator#0" expanded="false" />
             <element signature="method#setCinemas#0;class#RandomListGenerator#0" expanded="false" />
-            <element signature="method#getRandomMovieList#0;class#RandomListGenerator#0" expanded="false" />
-            <element signature="method#getCinemaList#0;class#RandomListGenerator#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding>
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="72" column="79" lean-forward="true" selection-start-line="72" selection-start-column="79" selection-end-line="72" selection-end-column="79" />
+          <folding>
+            <element signature="method#User#2;class#User#0" expanded="false" />
+            <element signature="method#setAditionalInfo#0;class#User#0" expanded="false" />
+            <element signature="method#isAbleToBook#0;class#User#0" expanded="false" />
+            <element signature="method#isLogedIn#0;class#User#0" expanded="false" />
+            <element signature="method#setStudentsTicketNumber#0;class#User#0" expanded="false" />
+            <element signature="method#toString#0;class#User#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/BookingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#chooseCategory#0;class#BookingService#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/users.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        <state relative-caret-position="187">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/BookingService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        <state relative-caret-position="153">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="method#logIn#0;class#UserService#0" expanded="false" />
+            <element signature="method#registerNewUser#0;class#UserService#0" expanded="false" />
+            <element signature="method#isRegistered#0;class#UserService#0" expanded="false" />
+            <element signature="method#setAllUsers#0;class#UserService#0" expanded="false" />
+            <element signature="method#getUsers#0;class#UserService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Movie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/MovieShowing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/reservation/Hall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="57" lean-forward="false" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

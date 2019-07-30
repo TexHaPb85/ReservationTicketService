@@ -33,7 +33,7 @@ public class RandomListGenerator implements RandomGenerator {
         movies.add(new Movie("Star Wars",
                 TypeOfMovie.Translated,
                 StatusOfMovie.prePremiere,
-               // new DurationOfMovie(),
+                // new DurationOfMovie(),
                 Stream.of("Action", "Fantasy", "Drama").collect(Collectors.toList())));
         movies.add(new Movie("Game of Thrones",
                 TypeOfMovie.Original,
@@ -53,35 +53,33 @@ public class RandomListGenerator implements RandomGenerator {
 
     }
 
-    private void setCinemas(){
-        cinemas=new ArrayList<>();
-        cinemas.add(new Cinema("Batterfly", "Vadyma Getmana str. 43", 4.4, getRandomMovieList(),getHallsList()));
-        cinemas.add(new Cinema("Leypcig", "Cosmosa Heroes str. 23", 4.1, getRandomMovieList(),getHallsList()));
-        cinemas.add(new Cinema("Ocean Plaza", "Teremky str. 42", 4.8, getRandomMovieList(),getHallsList()));
-        cinemas.add(new Cinema("Kino Dom", "Garmatna str. 39", 4.9, getRandomMovieList(),getHallsList()));
-        cinemas.add(new Cinema("BloKino", "Shevchenka str. 77", 4.9, getRandomMovieList(),getHallsList()));
+    private void setCinemas() {
+        cinemas = new ArrayList<>();
+        cinemas.add(new Cinema("Batterfly", "Vadyma Getmana str. 43", 4.4, getRandomMovieList(), getHallsList()));
+        cinemas.add(new Cinema("Leypcig", "Cosmosa Heroes str. 23", 4.1, getRandomMovieList(), getHallsList()));
+        cinemas.add(new Cinema("Ocean Plaza", "Teremky str. 42", 4.8, getRandomMovieList(), getHallsList()));
+        cinemas.add(new Cinema("Kino Dom", "Garmatna str. 39", 4.9, getRandomMovieList(), getHallsList()));
+        cinemas.add(new Cinema("BloKino", "Shevchenka str. 77", 4.9, getRandomMovieList(), getHallsList()));
     }
 
-    private List<Hall> getHallsList(){
+    private List<Hall> getHallsList() {
         List<Hall> halls = new ArrayList<>();
-        classicHallNumbers.stream().limit(intRandom(3,9)).forEach(hallName->{
-            int amountOfPlaces = intRandom(4,14)*10;
-            BigDecimal price = new BigDecimal(intRandom(4,20)*10);
-            halls.add(new Hall(hallName,amountOfPlaces,price));
+        int numberOfHallsInCinema = intRandom(MIN_NUMBER_OF_HALLS_IN_CINEMA, MAX_NUMBER_OF_HALLS_IN_CINEMA);
+        classicHallNumbers.stream().limit(numberOfHallsInCinema).forEach(hallName -> {
+            int amountOfPlaces = intRandom(MIN_AMOUNT_OF_ROWS, MAX_AMOUNT_OF_ROWS) * NUMBER_OF_PLACES_IN_ONE_ROW;
+            BigDecimal price = new BigDecimal(intRandom(MIN_PRICE_DIVIDED_BY_10, MAX_PRICE_DIVIDED_BY_10) * 10);
+            halls.add(new Hall(hallName, amountOfPlaces, price));
         });
         return halls;
     }
 
     @Override
     public List<Movie> getRandomMovieList() {
-        int minSizeOfList = 2;
-        int sizeOfRandomMovieList = (int) (Math.random() * movies.size()) +minSizeOfList;
-        return movies.stream().limit(sizeOfRandomMovieList).collect(Collectors.toList());
+        return movies;
     }
 
     @Override
     public List<Cinema> getCinemaList() {
-        //int sizeOfRandomMovieList = (int) (Math.random() * cinemas.size()) +minSizeOfList;
         return cinemas;
 
     }

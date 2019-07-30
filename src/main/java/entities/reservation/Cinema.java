@@ -40,17 +40,19 @@ public class Cinema {
     private void makeSchedule() {
         int hallPointer = 0;
         int plusHours = 0;
-        for (int i = 0; i < movieList.size(); i++) {
-            dailyMovieSchedule.add(
-                    new MovieShowing(LocalDate.now().atTime(9, 0).plusHours(plusHours),
-                            this,
-                            halls.get(hallPointer),
-                            movieList.get(i)));
-            if (hallPointer < movieList.size() - 2) {
-                hallPointer++;
-            } else {
-                plusHours++;
-                hallPointer = 0;
+        for (int j = 0; j < halls.size(); j++) {
+            for (int i = 0; i < movieList.size(); i++) {
+                dailyMovieSchedule.add(
+                        new MovieShowing(LocalDate.now().atTime(9, 0).plusHours(plusHours),
+                                this,
+                                halls.get(hallPointer),
+                                movieList.get(i)));
+                if (hallPointer < halls.size()-1) {
+                    hallPointer++;
+                } else {
+                    plusHours+=3;
+                    hallPointer = 0;
+                }
             }
         }
     }

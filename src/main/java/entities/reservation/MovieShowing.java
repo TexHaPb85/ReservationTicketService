@@ -49,6 +49,6 @@ public class MovieShowing {
 
     @Override
     public String toString() {
-        return showingMovie.getName() + " date: " + showingDate;
+        return showingMovie.getName() + " date: " + showingDate + " hall:" + hallOfMovie.getNumber();
     }
 }

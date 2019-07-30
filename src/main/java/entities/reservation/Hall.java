@@ -1,6 +1,7 @@
 package entities.reservation;
 
 import Enums.TypeOfPlace;
+import abstractions.RandomGenerator;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
@@ -48,18 +49,20 @@ public class Hall {
     }
 
     public void showBookedPlaces() {
+        int numOfPlacesInOneRow = RandomGenerator.NUMBER_OF_PLACES_IN_ONE_ROW;
+
         StringBuilder sb = new StringBuilder("Hall: " + number + "\n");
-        int numOfPlacesInOneRow = (int) Math.sqrt(amountOfPlaces);
         bookedPlaces.forEach((place, isBooked) -> {
             if (!isBooked) {
                 sb.append(place.getType().getSigh() + place.getPlaceNumber() + " ");
             } else {
-                sb.append(place.getType().getSigh() + place.getPlaceNumber() + "# ");
+                sb.append("#" + place.getPlaceNumber() + " ");
             }
-            if ((place.getPlaceNumber() + 1) % numOfPlacesInOneRow == 0) {
+            if ((place.getPlaceNumber()) % numOfPlacesInOneRow == 0) {
                 sb.append("\n");
             }
         });
+        sb.append("############SCREEN#############");
         System.out.println(sb.toString());
     }
 

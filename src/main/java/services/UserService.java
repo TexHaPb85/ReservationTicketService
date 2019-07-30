@@ -11,13 +11,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserService implements UserDAO {
+    private final File USERS_FILE = new File("src/main/resources/users.txt");
     private List<User> users;
-    private File usersFile;
 
     public UserService() {
         this.users = new ArrayList<>();
-        this.usersFile = new File("C:\\Java20182019\\ReservationTicketService\\src\\main\\resources\\users.txt");
-        //this.usersFile = new File(getClass().getClassLoader().getResource("users.txt").getFile());
         setAllUsers();
     }
 
@@ -31,15 +29,21 @@ public class UserService implements UserDAO {
         //System.out.println(isRegistered(loginUser));
         users.stream()
                 .filter(user -> user.getLogin().equalsIgnoreCase(loginUser.getLogin())
-                             && user.getPassword().equals(loginUser.getPassword()))
+                        && user.getPassword().equals(loginUser.getPassword()))
                 .findFirst()
                 .ifPresent(user -> GlobalCinemaService.currentUser = user);
     }
 
     @Override
-    public void registerUser(User user) {
-        String userInfo = "\n" + user.getLogin() + " " + user.getPassword() + " " + user.getStudentsTicketNumber();
-        FileWorker.writeToFile(usersFile, userInfo);
+    public void registerNewUser(Scanner scanner) {
+        System.out.println("Enter your new login");
+        String login = scanner.next();
+        System.out.println("Enter your new password");
+        String password = scanner.next();
+        System.out.println("If you are student enter your student`s ticket number or if yor aren`t enter '-'");
+        String ticketNum = scanner.next();
+        String userInfo = "\n" + login + " " + password + " " + ticketNum;
+        FileWorker.writeToFile(USERS_FILE, userInfo);
         setAllUsers();
     }
 
@@ -47,7 +51,7 @@ public class UserService implements UserDAO {
     public boolean isRegistered(User inputUser) {
         return users.stream()
                 .anyMatch(user -> user.getLogin().equalsIgnoreCase(inputUser.getLogin())
-                               && user.getPassword().equalsIgnoreCase(inputUser.getPassword()));
+                        && user.getPassword().equalsIgnoreCase(inputUser.getPassword()));
     }
 
     @Override
@@ -56,7 +60,7 @@ public class UserService implements UserDAO {
         Scanner sc = null;
 
         try {
-            sc = new Scanner(usersFile);
+            sc = new Scanner(USERS_FILE);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
