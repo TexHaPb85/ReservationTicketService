@@ -25,7 +25,7 @@ public class Hall {
         for (Place place : bookedPlaces.keySet()) {
             if (place.getPlaceNumber() == number) {
                 bookedPlaces.put(place, true);
-                bookingPlace=place;
+                bookingPlace = place;
             }
         }
         return bookingPlace;
@@ -63,7 +63,7 @@ public class Hall {
             }
         });
         sb.append("############SCREEN#############");
-        System.out.println(sb.toString()+"\n");
+        System.out.println(sb.toString() + "\n");
     }
 
     public void setPlaceBooked(Place place) {

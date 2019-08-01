@@ -70,7 +70,7 @@ public class Booking {
         sb.append("\nDate: " + movieShowing.getShowingDate());
         sb.append("\nCinema: " + movieShowing.getCinemaOfMovie().getName());
         sb.append("\nHall: " + movieShowing.getHallOfMovie().getNumber());
-        sb.append("\nPlace: " + place.getType() + ", number:" + place.getPlaceNumber()+"\n");
+        sb.append("\nPlace: " + place.getType() + ", number:" + place.getPlaceNumber() + "\n");
 
         return sb.toString();
     }

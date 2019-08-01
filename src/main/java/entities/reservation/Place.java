@@ -23,12 +23,12 @@ public class Place {
         this.price = new BigDecimal(0);
     }
 
-    public void setDiscountPrice(MovieShowing movieShowing, User user){
-        if(movieShowing.getShowingMovie().getStatus().equals(StatusOfMovie.available)){
-            price=price.multiply(BigDecimal.valueOf(0.85));
+    public void setDiscountPrice(MovieShowing movieShowing, User user) {
+        if (movieShowing.getShowingMovie().getStatus().equals(StatusOfMovie.available)) {
+            price = price.multiply(BigDecimal.valueOf(0.85));
         }
-        if(user.isStudent()){
-            price=price.multiply(BigDecimal.valueOf(0.9));
+        if (user.isStudent()) {
+            price = price.multiply(BigDecimal.valueOf(0.9));
         }
     }
 

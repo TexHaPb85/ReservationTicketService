@@ -47,10 +47,10 @@ public class Cinema {
                                 this,
                                 halls.get(hallPointer),
                                 movieList.get(i)));
-                if (hallPointer < halls.size()-1) {
+                if (hallPointer < halls.size() - 1) {
                     hallPointer++;
                 } else {
-                    plusHours+=3;
+                    plusHours += 3;
                     hallPointer = 0;
                 }
             }
@@ -103,7 +103,6 @@ public class Cinema {
     public List<Movie> getMovieList() {
         return movieList;
     }
-
 
 
     public void setMovieList(List<Movie> movieList) {

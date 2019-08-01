@@ -1,9 +1,9 @@
 package services;
 
 import abstractions.CinemaShower;
+import comparators.CinemaComparatorByRatingDESC;
 import entities.reservation.Cinema;
 import entities.reservation.Movie;
-import comparators.CinemaComparatorByRatingDESC;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class SelectCinemaService implements CinemaShower {
         return this;
     }
 
-    public void sortCinemasByRating(){
+    public void sortCinemasByRating() {
         cinemaList.sort(new CinemaComparatorByRatingDESC());
     }
 

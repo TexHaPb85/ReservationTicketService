@@ -67,7 +67,7 @@ public class User extends Client {
                 && !password.equalsIgnoreCase("");
     }
 
-    public void showBookingList() {
+    public void showBookingList(Scanner scanner) {
         StringBuilder sb = new StringBuilder(login + "`s, booking list:\n");
         for (int i = 0; i < bookings.size(); i++) {
             Booking booking = bookings.get(i);
@@ -82,15 +82,21 @@ public class User extends Client {
             sb.append("\n");
         }
         System.out.println(sb.toString());
+        if(!bookings.isEmpty()){
+            System.out.println("Enter number of booking to see more information about that booking. Enter -1, to go to the main menu.");
+            int indexOfBooking = scanner.nextInt();
+            System.out.println(bookings.get(indexOfBooking-1).toString());
+        }else {
+            System.out.println("You have no bookings yet");
+        }
     }
 
     public void payUnpaidBookings(Scanner scanner){
-        showBookingList();
         System.out.println("Enter number of unpaid booking:");
+        showBookingList(scanner);
         int indexOfBookingToPay = scanner.nextInt();
-        Booking booking = bookings.get(indexOfBookingToPay-1);
         System.out.println("Please enter info of your credit card to make a payment, or enter '-', if you want to pay it later");
-        System.out.println("format of info: 5355-****-****-2501_08:21_243");
+        System.out.println("format of info: 5355-7632-2131-2501_08:12_243");
         String creditCardInfo = scanner.next();
         if(CreditCardChecker.isCorrectCardInfo(creditCardInfo)){
             bookings.get(indexOfBookingToPay-1).setPaid(true);

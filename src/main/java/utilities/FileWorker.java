@@ -7,12 +7,10 @@ public class FileWorker {
 
     public static String readFile(String filePath) {
         File file = new File(filePath);
-
         return readFile(file);
     }
 
     public static String readFile(File file) {
-
         Scanner sc = null;
         try {
             sc = new Scanner(file);
@@ -30,15 +28,13 @@ public class FileWorker {
     }
 
 
-    public static void writeToFile(File f, String text){
-        try(FileWriter fileWriter = new FileWriter(f, true))
-        {
+    public static void writeToFile(File f, String text) {
+        try (FileWriter fileWriter = new FileWriter(f, true)) {
             BufferedWriter writer = new BufferedWriter(fileWriter);
             writer.write(text);
             writer.close();
-            System.out.println(text+" appended to file "+f.getPath());
-        }
-        catch(IOException ex){
+            System.out.println(text + " appended to file " + f.getPath());
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
