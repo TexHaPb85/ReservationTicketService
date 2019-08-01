@@ -8,7 +8,7 @@ import utilities.CreditCardChecker;
 
 import java.util.Scanner;
 
-public class ParallelBooker extends Thread {
+public class ParallelBooker implements Runnable {
     private MovieShowing showing;
     private User booker;
     private Scanner scanner;
@@ -21,7 +21,7 @@ public class ParallelBooker extends Thread {
         this.currentBookingId = currentBookingId;
     }
 
-    private void book() {
+    private synchronized void book() {
         System.out.println("booking from thread: " + Thread.currentThread());
 
         System.out.println("Hello, " + booker.getLogin() + " you want to make booking of '" + showing.toString() + "'");
@@ -53,7 +53,6 @@ public class ParallelBooker extends Thread {
 
     @Override
     public void run() {
-        super.run();
         book();
     }
 }
