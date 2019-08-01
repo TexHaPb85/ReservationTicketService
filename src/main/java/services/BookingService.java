@@ -2,6 +2,7 @@ package services;
 
 import entities.User;
 import entities.reservation.*;
+import utilities.CreditCardChecker;
 import utilities.RandomListGenerator;
 
 import java.util.List;
@@ -63,9 +64,9 @@ public class BookingService {
 
         System.out.println(place.getPrice() + " to pay");
         System.out.println("Please enter info of your credit card to make a payment, or enter '-', if you want to pay it later");
-        System.out.println("format of info: 5355 **** **** 2501 08-21 243");
+        System.out.println("format of info: 5355-****-****-2501_08:21_243");
         String creditCardInfo = scanner.next();
-        boolean isPaid = creditCardInfo.length() > 19;
+        boolean isPaid = CreditCardChecker.isCorrectCardInfo(creditCardInfo);
         Booking booking = new Booking(currentBookingId++, isPaid, place, showing);
         booker.addBookings(booking);
 
@@ -73,6 +74,7 @@ public class BookingService {
             System.out.println("you entered wrong credit card, you can pay it later");
             System.out.println(booking.toString());
             System.out.println("added to your booking list as unpaid");
+            System.out.println("------------------------------------\n");
         } else {
             System.out.println("booking successful!");
             System.out.println(booking.toString());

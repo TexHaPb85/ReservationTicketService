@@ -1,6 +1,7 @@
 package entities;
 
 import entities.reservation.Booking;
+import utilities.CreditCardChecker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,8 +69,10 @@ public class User extends Client {
 
     public void showBookingList() {
         StringBuilder sb = new StringBuilder(login + "`s, booking list:\n");
-        bookings.forEach(booking -> {
-            sb.append(booking.getMovieShowing().getShowingMovie().getName() + ": ")
+        for (int i = 0; i < bookings.size(); i++) {
+            Booking booking = bookings.get(i);
+            sb.append((i+1)+". ")
+                    .append(booking.getMovieShowing().getShowingMovie().getName() + ": ")
                     .append(booking.getMovieShowing().getShowingDate() + ", ");
             if (booking.isPaid()) {
                 sb.append(" is paid ");
@@ -77,8 +80,21 @@ public class User extends Client {
                 sb.append(" not paid ");
             }
             sb.append("\n");
-        });
+        }
         System.out.println(sb.toString());
+    }
+
+    public void payUnpaidBookings(Scanner scanner){
+        showBookingList();
+        System.out.println("Enter number of unpaid booking:");
+        int indexOfBookingToPay = scanner.nextInt();
+        Booking booking = bookings.get(indexOfBookingToPay-1);
+        System.out.println("Please enter info of your credit card to make a payment, or enter '-', if you want to pay it later");
+        System.out.println("format of info: 5355-****-****-2501_08:21_243");
+        String creditCardInfo = scanner.next();
+        if(CreditCardChecker.isCorrectCardInfo(creditCardInfo)){
+            bookings.get(indexOfBookingToPay-1).setPaid(true);
+        }
     }
 
     public boolean isStudent(){

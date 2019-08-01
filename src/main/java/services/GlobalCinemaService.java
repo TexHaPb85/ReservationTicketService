@@ -27,6 +27,8 @@ public class GlobalCinemaService {
                 "3. Book places for a movie\n"+
                 "4. Show my booking list\n"+
                 "5. Sign up\n"+
+                "6. Pay unpaid bookings\n"+
+                "7. Set additional info\n"+
                 "9. Exit");
         switch (scanner.next()) {
             case "0":
@@ -48,6 +50,11 @@ public class GlobalCinemaService {
                 userService.registerNewUser(scanner);
                 userService.logIn(scanner);
                 break;
+            case "6":
+                currentUser.payUnpaidBookings(scanner);
+                break;
+            case "7":
+                currentUser.setAditionalInfo(scanner);
             case "9":
                 return false;
             default:

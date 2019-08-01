@@ -43,7 +43,7 @@ public class Cinema {
         for (int j = 0; j < halls.size(); j++) {
             for (int i = 0; i < movieList.size(); i++) {
                 dailyMovieSchedule.add(
-                        new MovieShowing(LocalDate.now().atTime(9, 0).plusHours(plusHours),
+                        new MovieShowing(LocalDate.now().plusDays(1).atTime(9, 0).plusHours(plusHours),
                                 this,
                                 halls.get(hallPointer),
                                 movieList.get(i)));
