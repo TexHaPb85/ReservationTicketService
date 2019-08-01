@@ -46,6 +46,14 @@ public class Movie {
         return name;
     }
 
+    public StatusOfMovie getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusOfMovie status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return name + categories +

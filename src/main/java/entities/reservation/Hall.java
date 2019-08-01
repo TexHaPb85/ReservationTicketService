@@ -51,7 +51,7 @@ public class Hall {
     public void showBookedPlaces() {
         int numOfPlacesInOneRow = RandomGenerator.NUMBER_OF_PLACES_IN_ONE_ROW;
 
-        StringBuilder sb = new StringBuilder("Hall: " + number + "\n");
+        StringBuilder sb = new StringBuilder("\nHall: " + number + "\n");
         bookedPlaces.forEach((place, isBooked) -> {
             if (!isBooked) {
                 sb.append(place.getType().getSigh() + place.getPlaceNumber() + " ");
@@ -63,7 +63,7 @@ public class Hall {
             }
         });
         sb.append("############SCREEN#############");
-        System.out.println(sb.toString());
+        System.out.println(sb.toString()+"\n");
     }
 
     public void setPlaceBooked(Place place) {

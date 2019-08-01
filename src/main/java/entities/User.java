@@ -61,7 +61,7 @@ public class User extends Client {
                 .count() <= 2;
     }
 
-    public boolean isLogedIn() {
+    public boolean isAuthorized() {
         return !login.equalsIgnoreCase("unknown")
                 && !password.equalsIgnoreCase("");
     }
@@ -79,6 +79,10 @@ public class User extends Client {
             sb.append("\n");
         });
         System.out.println(sb.toString());
+    }
+
+    public boolean isStudent(){
+        return studentsTicketNumber.toUpperCase().contains("KV") && studentsTicketNumber.length()>6;
     }
 
     public String getLogin() {
