@@ -28,27 +28,22 @@ public class RandomListGenerator implements RandomGenerator {
         movies.add(new Movie("Avangers",
                 TypeOfMovie.Translated,
                 StatusOfMovie.prePremiere,
-                //new DurationOfMovie(),
                 Stream.of("Comedy", "Action", "Fantasy").collect(Collectors.toList())));
         movies.add(new Movie("Star Wars",
                 TypeOfMovie.Translated,
                 StatusOfMovie.prePremiere,
-                // new DurationOfMovie(),
                 Stream.of("Action", "Fantasy", "Drama").collect(Collectors.toList())));
         movies.add(new Movie("Game of Thrones",
                 TypeOfMovie.Original,
                 StatusOfMovie.premiere,
-                //new DurationOfMovie(),
                 Stream.of("Horror", "Action", "Fantasy", "Historical").collect(Collectors.toList())));
         movies.add(new Movie("Terminator",
                 TypeOfMovie.Translated,
                 StatusOfMovie.available,
-                //new DurationOfMovie(),
                 Stream.of("Drama", "Action", "Fantasy").collect(Collectors.toList())));
         movies.add(new Movie("Zombie",
                 TypeOfMovie.Original,
                 StatusOfMovie.premiere,
-                //new DurationOfMovie(),
                 Stream.of("Horror", "Action", "Fantasy").collect(Collectors.toList())));
 
     }

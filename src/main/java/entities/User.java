@@ -67,6 +67,11 @@ public class User extends Client {
                 && !password.equalsIgnoreCase("");
     }
 
+    public boolean isStudent(){
+        return studentsTicketNumber!=null
+                && studentsTicketNumber.length()>6;
+    }
+
     public void showBookingList(Scanner scanner) {
         StringBuilder sb = new StringBuilder(login + "`s, booking list:\n");
         for (int i = 0; i < bookings.size(); i++) {
@@ -103,9 +108,6 @@ public class User extends Client {
         }
     }
 
-    public boolean isStudent(){
-        return studentsTicketNumber.toUpperCase().contains("KV") && studentsTicketNumber.length()>6;
-    }
 
     public String getLogin() {
         return login;

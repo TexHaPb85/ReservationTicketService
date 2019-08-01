@@ -73,7 +73,7 @@ public class BookingService {
         booker.addBookings(booking);
 
         if (!isPaid) {
-            System.out.println("Can`t find credit card, you can pay this booking later frm main menu");
+            System.out.println("Can`t find credit card, you can pay this booking later fro1m main menu");
             System.out.println(booking.toString());
             System.out.println("added to your booking list as unpaid");
             System.out.println("------------------------------------\n");

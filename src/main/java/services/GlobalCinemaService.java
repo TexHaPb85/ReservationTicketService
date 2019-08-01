@@ -55,6 +55,7 @@ public class GlobalCinemaService {
                 break;
             case "8":
                 currentUser.setAditionalInfo(scanner);
+                break;
             case "9":
                 return false;
             default:
@@ -63,10 +64,4 @@ public class GlobalCinemaService {
         start();
         return true;
     }
-
-    private void seeBookinglistOfUser() {
-        System.out.println();
-    }
-
-
 }
