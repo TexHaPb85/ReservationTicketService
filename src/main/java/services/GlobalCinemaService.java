@@ -26,7 +26,7 @@ public class GlobalCinemaService {
                 "2. Search movies by category\n" +
                 "3. Book places for a movie\n"+
                 "4. Show my booking list\n"+
-                "7. Sign up\n"+
+                "5. Sign up\n"+
                 "9. Exit");
         switch (scanner.next()) {
             case "0":
@@ -44,7 +44,7 @@ public class GlobalCinemaService {
             case "4":
                 currentUser.showBookingList();
                 break;
-            case "7":
+            case "5":
                 userService.registerNewUser(scanner);
                 userService.logIn(scanner);
                 break;
