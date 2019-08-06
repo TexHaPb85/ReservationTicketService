@@ -11,15 +11,15 @@ public class Booking {
     private Place place;
     private LocalDateTime bookedDate;
     private LocalDateTime lastDayOfPayment;
-    private MovieShowing movieShowing;
+    private ScheduledMovie scheduledMovie;
 
-    public Booking(int id, boolean isPaid, Place place, MovieShowing movieShowing) {
+    public Booking(int id, boolean isPaid, Place place, ScheduledMovie scheduledMovie) {
         bookedDate = LocalDateTime.now();
-        lastDayOfPayment = movieShowing.getShowingDate().minusHours(5);
+        lastDayOfPayment = scheduledMovie.getShowingDate().minusHours(5);
         this.id = id;
         this.isPaid = isPaid;
         this.place = place;
-        this.movieShowing = movieShowing;
+        this.scheduledMovie = scheduledMovie;
     }
 
     public int getId() {
@@ -46,12 +46,12 @@ public class Booking {
         this.place = place;
     }
 
-    public MovieShowing getMovieShowing() {
-        return movieShowing;
+    public ScheduledMovie getScheduledMovie() {
+        return scheduledMovie;
     }
 
-    public void setMovieShowing(MovieShowing movieShowing) {
-        this.movieShowing = movieShowing;
+    public void setScheduledMovie(ScheduledMovie scheduledMovie) {
+        this.scheduledMovie = scheduledMovie;
     }
 
     @Override
@@ -65,11 +65,11 @@ public class Booking {
             sb.append("\nlast day of payment: " + lastDayOfPayment);
         }
         sb.append("\n******************************");
-        sb.append("\nMovie: " + movieShowing.getShowingMovie().getName());
+        sb.append("\nMovie: " + scheduledMovie.getShowingMovie().getName());
         sb.append("\n******************************");
-        sb.append("\nDate: " + movieShowing.getShowingDate());
-        sb.append("\nCinema: " + movieShowing.getCinemaOfMovie().getName());
-        sb.append("\nHall: " + movieShowing.getHallOfMovie().getNumber());
+        sb.append("\nDate: " + scheduledMovie.getShowingDate());
+        sb.append("\nCinema: " + scheduledMovie.getCinemaOfMovie().getName());
+        sb.append("\nHall: " + scheduledMovie.getHallOfMovie().getNumber());
         sb.append("\nPlace: " + place.getType() + ", number:" + place.getPlaceNumber() + "\n");
 
         return sb.toString();

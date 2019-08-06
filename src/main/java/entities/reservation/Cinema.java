@@ -11,7 +11,7 @@ public class Cinema {
 
     private List<Movie> movieList;
     private List<Hall> halls;
-    private List<MovieShowing> dailyMovieSchedule;
+    private List<ScheduledMovie> dailyMovieSchedule;
 
     public Cinema(String name, String address, double rating, List<Movie> movieList, List<Hall> halls) {
         this.name = name;
@@ -43,7 +43,7 @@ public class Cinema {
         for (int j = 0; j < halls.size(); j++) {
             for (int i = 0; i < movieList.size(); i++) {
                 dailyMovieSchedule.add(
-                        new MovieShowing(LocalDate.now().plusDays(1).atTime(9, 0).plusHours(plusHours),
+                        new ScheduledMovie(LocalDate.now().plusDays(1).atTime(9, 0).plusHours(plusHours),
                                 this,
                                 halls.get(hallPointer),
                                 movieList.get(i)));
@@ -109,11 +109,11 @@ public class Cinema {
         this.movieList = movieList;
     }
 
-    public List<MovieShowing> getDailyMovieSchedule() {
+    public List<ScheduledMovie> getDailyMovieSchedule() {
         return dailyMovieSchedule;
     }
 
-    public void setDailyMovieSchedule(List<MovieShowing> dailyMovieSchedule) {
+    public void setDailyMovieSchedule(List<ScheduledMovie> dailyMovieSchedule) {
         this.dailyMovieSchedule = dailyMovieSchedule;
     }
 

@@ -1,7 +1,7 @@
 package utilities;
 
-import Enums.StatusOfMovie;
-import Enums.TypeOfMovie;
+import enums.StatusOfMovie;
+import enums.TypeOfMovie;
 import abstractions.RandomGenerator;
 import entities.reservation.Cinema;
 import entities.reservation.Hall;
@@ -19,37 +19,37 @@ public class RandomListGenerator implements RandomGenerator {
     private List<Cinema> cinemas;
 
     public RandomListGenerator() {
-        setMovies();
-        setCinemas();
+        this.movies = new ArrayList<>();
+        this.cinemas = new ArrayList<>();
+        fillMovies();
+        fillCinemas();
     }
 
-    private void setMovies() {
-        movies = new ArrayList<>();
+    private void fillMovies() {
         movies.add(new Movie("Avangers",
-                TypeOfMovie.Translated,
-                StatusOfMovie.prePremiere,
+                TypeOfMovie.TRANSLATED,
+                StatusOfMovie.PRE_PREMIERE,
                 Stream.of("Comedy", "Action", "Fantasy").collect(Collectors.toList())));
         movies.add(new Movie("Star Wars",
-                TypeOfMovie.Translated,
-                StatusOfMovie.prePremiere,
+                TypeOfMovie.TRANSLATED,
+                StatusOfMovie.PRE_PREMIERE,
                 Stream.of("Action", "Fantasy", "Drama").collect(Collectors.toList())));
         movies.add(new Movie("Game of Thrones",
-                TypeOfMovie.Original,
-                StatusOfMovie.premiere,
+                TypeOfMovie.ORIGINAL,
+                StatusOfMovie.PREMIERE,
                 Stream.of("Horror", "Action", "Fantasy", "Historical").collect(Collectors.toList())));
         movies.add(new Movie("Terminator",
-                TypeOfMovie.Translated,
-                StatusOfMovie.available,
+                TypeOfMovie.TRANSLATED,
+                StatusOfMovie.AVAILABLE,
                 Stream.of("Drama", "Action", "Fantasy").collect(Collectors.toList())));
         movies.add(new Movie("Zombie",
-                TypeOfMovie.Original,
-                StatusOfMovie.premiere,
+                TypeOfMovie.ORIGINAL,
+                StatusOfMovie.PREMIERE,
                 Stream.of("Horror", "Action", "Fantasy").collect(Collectors.toList())));
 
     }
 
-    private void setCinemas() {
-        cinemas = new ArrayList<>();
+    private void fillCinemas() {
         cinemas.add(new Cinema("Batterfly", "Vadyma Getmana str. 43", 4.4, getRandomMovieList(), getHallsList()));
         cinemas.add(new Cinema("Leypcig", "Cosmosa Heroes str. 23", 4.1, getRandomMovieList(), getHallsList()));
         cinemas.add(new Cinema("Ocean Plaza", "Teremky str. 42", 4.8, getRandomMovieList(), getHallsList()));

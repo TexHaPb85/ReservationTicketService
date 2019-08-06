@@ -1,6 +1,6 @@
 package services;
 
-import dao.UserDAO;
+import interfaces.UserInterface;
 import entities.User;
 import utilities.FileWorker;
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserService implements UserDAO {
+public class UserService implements UserInterface {
     private final File USERS_FILE = new File("src/main/resources/users.txt");
     private List<User> users;
 

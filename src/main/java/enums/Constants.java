@@ -1,4 +1,4 @@
-package Enums;
+package enums;
 
 public enum Constants {
     MIN_PART_OF_MOVIE(1),

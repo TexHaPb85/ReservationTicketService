@@ -4,7 +4,7 @@ import entities.reservation.Movie;
 
 import java.util.List;
 
-public interface CinemaShower {
+public interface CinemaInterface {
 
     String showListOfCinemas();
 

@@ -1,7 +1,7 @@
 package entities.reservation;
 
-import Enums.StatusOfMovie;
-import Enums.TypeOfPlace;
+import enums.StatusOfMovie;
+import enums.TypeOfPlace;
 import entities.User;
 
 import java.math.BigDecimal;
@@ -19,12 +19,12 @@ public class Place {
 
     public Place() {
         this.placeNumber = -1;
-        this.type = TypeOfPlace.normal;
+        this.type = TypeOfPlace.NORMAL;
         this.price = new BigDecimal(0);
     }
 
-    public void setDiscountPrice(MovieShowing movieShowing, User user) {
-        if (movieShowing.getShowingMovie().getStatus().equals(StatusOfMovie.available)) {
+    public void setDiscountPrice(ScheduledMovie scheduledMovie, User user) {
+        if (scheduledMovie.getShowingMovie().getStatus().equals(StatusOfMovie.AVAILABLE)) {
             price = price.multiply(BigDecimal.valueOf(0.85));
         }
         if (user.isStudent()) {

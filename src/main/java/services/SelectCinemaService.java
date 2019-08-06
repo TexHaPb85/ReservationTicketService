@@ -1,6 +1,6 @@
 package services;
 
-import abstractions.CinemaShower;
+import abstractions.CinemaInterface;
 import comparators.CinemaComparatorByRatingDESC;
 import entities.reservation.Cinema;
 import entities.reservation.Movie;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SelectCinemaService implements CinemaShower {
+public class SelectCinemaService implements CinemaInterface {
 
     private List<Cinema> cinemaList;
 

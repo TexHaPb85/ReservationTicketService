@@ -1,6 +1,6 @@
 package entities.reservation;
 
-import Enums.TypeOfPlace;
+import enums.TypeOfPlace;
 import abstractions.RandomGenerator;
 
 import java.math.BigDecimal;
@@ -39,10 +39,10 @@ public class Hall {
                 bookedPlaces.put(place, false);
             } else if (i < amountOfPlaces / 2) {
                 BigDecimal priceOfTicket = normalTicketPrice.multiply(BigDecimal.valueOf(1.2));
-                Place place = new Place(i, TypeOfPlace.premium, priceOfTicket);
+                Place place = new Place(i, TypeOfPlace.PREMIUM, priceOfTicket);
                 bookedPlaces.put(place, false);
             } else {
-                Place place = new Place(i, TypeOfPlace.normal, normalTicketPrice);
+                Place place = new Place(i, TypeOfPlace.NORMAL, normalTicketPrice);
                 bookedPlaces.put(place, false);
             }
         }

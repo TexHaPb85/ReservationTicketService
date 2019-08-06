@@ -1,8 +1,8 @@
-package Enums;
+package enums;
 
 public enum TypeOfMovie {
-    Original("original language film"),
-    Translated("translated film");
+    ORIGINAL("original language film"),
+    TRANSLATED("translated film");
 
     private String val;
 

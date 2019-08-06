@@ -72,13 +72,23 @@ public class User extends Client {
                 && studentsTicketNumber.length()>6;
     }
 
+    private void showChosenBooking(Scanner scanner){
+        if(!bookings.isEmpty()){
+            System.out.println("Enter number of booking to see more information about that booking. Enter -1, to go to the main menu.");
+            int indexOfBooking = scanner.nextInt();
+            System.out.println(bookings.get(indexOfBooking-1).toString());
+        }else {
+            System.out.println("You have no bookings yet");
+        }
+    }
+
     public void showBookingList(Scanner scanner) {
         StringBuilder sb = new StringBuilder(login + "`s, booking list:\n");
         for (int i = 0; i < bookings.size(); i++) {
             Booking booking = bookings.get(i);
             sb.append((i+1)+". ")
-                    .append(booking.getMovieShowing().getShowingMovie().getName() + ": ")
-                    .append(booking.getMovieShowing().getShowingDate() + ", ");
+                    .append(booking.getScheduledMovie().getShowingMovie().getName() + ": ")
+                    .append(booking.getScheduledMovie().getShowingDate() + ", ");
             if (booking.isPaid()) {
                 sb.append(" is paid ");
             } else {
@@ -87,13 +97,8 @@ public class User extends Client {
             sb.append("\n");
         }
         System.out.println(sb.toString());
-        if(!bookings.isEmpty()){
-            System.out.println("Enter number of booking to see more information about that booking. Enter -1, to go to the main menu.");
-            int indexOfBooking = scanner.nextInt();
-            System.out.println(bookings.get(indexOfBooking-1).toString());
-        }else {
-            System.out.println("You have no bookings yet");
-        }
+
+        showChosenBooking(scanner);
     }
 
     public void payUnpaidBookings(Scanner scanner){

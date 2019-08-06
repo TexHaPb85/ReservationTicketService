@@ -1,10 +1,10 @@
-package dao;
+package interfaces;
 
 import entities.User;
 
 import java.util.Scanner;
 
-public interface UserDAO {
+public interface UserInterface {
 
     void registerNewUser(Scanner scanner);
 

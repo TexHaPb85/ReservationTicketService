@@ -1,8 +1,8 @@
-package Enums;
+package enums;
 
 public enum TypeOfPlace {
-    normal("N"),
-    premium("P"),
+    NORMAL("N"),
+    PREMIUM("P"),
     VIP("V");
 
     private String sigh;

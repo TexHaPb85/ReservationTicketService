@@ -2,19 +2,19 @@ package services;
 
 import entities.User;
 import entities.reservation.Booking;
-import entities.reservation.MovieShowing;
+import entities.reservation.ScheduledMovie;
 import entities.reservation.Place;
 import utilities.CreditCardChecker;
 
 import java.util.Scanner;
 
 public class ParallelBooker implements Runnable {
-    private MovieShowing showing;
+    private ScheduledMovie showing;
     private User booker;
     private Scanner scanner;
     private int currentBookingId;
 
-    public ParallelBooker(MovieShowing showing, User booker, Scanner scanner, int currentBookingId) {
+    public ParallelBooker(ScheduledMovie showing, User booker, Scanner scanner, int currentBookingId) {
         this.showing = showing;
         this.booker = booker;
         this.scanner = scanner;

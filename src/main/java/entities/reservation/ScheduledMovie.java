@@ -2,13 +2,13 @@ package entities.reservation;
 
 import java.time.LocalDateTime;
 
-public class MovieShowing {
+public class ScheduledMovie {
     private LocalDateTime showingDate;
     private Cinema cinemaOfMovie;
     private Hall hallOfMovie;
     private Movie showingMovie;
 
-    public MovieShowing(LocalDateTime showingDate, Cinema cinemaOfMovie, Hall hallOfMovie, Movie showingMovie) {
+    public ScheduledMovie(LocalDateTime showingDate, Cinema cinemaOfMovie, Hall hallOfMovie, Movie showingMovie) {
         this.showingDate = showingDate;
         this.cinemaOfMovie = cinemaOfMovie;
         this.hallOfMovie = hallOfMovie;

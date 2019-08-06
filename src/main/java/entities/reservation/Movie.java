@@ -1,19 +1,19 @@
 package entities.reservation;
 
-import Enums.StatusOfMovie;
-import Enums.TypeOfMovie;
+import enums.StatusOfMovie;
+import enums.TypeOfMovie;
 
 import java.util.List;
 
 public class Movie {
     private String name;
-    private TypeOfMovie ifTranslated;//type of movie(original, translated)
-    private StatusOfMovie status;//status of movie(pre-premiere, premiere,  available)
+    private TypeOfMovie typeOfMovie;//type of movie(original, translated)
+    private StatusOfMovie status;//status of movie(pre-PREMIERE, PREMIERE,  AVAILABLE)
     private List<String> categories;
 
-    public Movie(String name, TypeOfMovie ifTranslated, StatusOfMovie status, List<String> categories) {
+    public Movie(String name, TypeOfMovie typeOfMovie, StatusOfMovie status, List<String> categories) {
         this.name = name;
-        this.ifTranslated = ifTranslated;
+        this.typeOfMovie = typeOfMovie;
         this.categories = categories;
         this.status = status;
     }
@@ -37,7 +37,7 @@ public class Movie {
     @Override
     public String toString() {
         return name + categories +
-                "\tLanguage: " + ifTranslated +
+                "\tLanguage: " + typeOfMovie +
                 "\tStatus: " + status +
                 "\t" + status;
     }

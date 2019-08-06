@@ -12,7 +12,8 @@ public class BookingService {
     private SelectCinemaService selectCinemaService;
     private Scanner scanner;
 
-    private int currentBookingId = 1;
+    private final int INITIAL_ID_VALUE = 1;
+    private int currentBookingId = INITIAL_ID_VALUE;
 
     public BookingService(Scanner scanner) {
         RandomListGenerator randomGenerator = new RandomListGenerator();
@@ -34,7 +35,7 @@ public class BookingService {
 
         int indexOfMovieShowing = scanner.nextInt() - 1;
         if (indexOfMovieShowing >= 0) {
-            MovieShowing showing = cinema.getDailyMovieSchedule().get(indexOfMovieShowing);
+            ScheduledMovie showing = cinema.getDailyMovieSchedule().get(indexOfMovieShowing);
             if (GlobalCinemaService.currentUser.isAbleToBook() && GlobalCinemaService.currentUser.isAuthorized()) {
                 bookMovieShowing(showing, GlobalCinemaService.currentUser, scanner);
             } else {
@@ -54,7 +55,7 @@ public class BookingService {
         }
     }
 
-    public void bookMovieShowing(MovieShowing showing, User booker, Scanner scanner) {
+    public void bookMovieShowing(ScheduledMovie showing, User booker, Scanner scanner) {
         System.out.println("booking from thread: " + Thread.currentThread());
 
         System.out.println("Hello, " + booker.getLogin() + " you want to make booking of '" + showing.toString() + "'");

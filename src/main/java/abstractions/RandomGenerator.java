@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public interface RandomGenerator {
+
     int MIN_NUMBER_OF_HALLS_IN_CINEMA = 3;
     int MAX_NUMBER_OF_HALLS_IN_CINEMA = 9;
     int MIN_AMOUNT_OF_ROWS = 4;
