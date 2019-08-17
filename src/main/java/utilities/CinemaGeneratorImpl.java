@@ -1,11 +1,11 @@
 package utilities;
 
-import enums.StatusOfMovie;
-import enums.TypeOfMovie;
-import abstractions.RandomGenerator;
+import abstractions.CinemaGenerator;
 import entities.reservation.Cinema;
 import entities.reservation.Hall;
 import entities.reservation.Movie;
+import enums.StatusOfMovie;
+import enums.TypeOfMovie;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class RandomListGenerator implements RandomGenerator {
+public class CinemaGeneratorImpl implements CinemaGenerator {
 
     private List<Movie> movies;
     private List<Cinema> cinemas;
 
-    public RandomListGenerator() {
+    public CinemaGeneratorImpl() {
         this.movies = new ArrayList<>();
         this.cinemas = new ArrayList<>();
         fillMovies();
@@ -29,23 +29,28 @@ public class RandomListGenerator implements RandomGenerator {
         movies.add(new Movie("Avangers",
                 TypeOfMovie.TRANSLATED,
                 StatusOfMovie.PRE_PREMIERE,
-                Stream.of("Comedy", "Action", "Fantasy").collect(Collectors.toList())));
+                Stream.of("Comedy", "Action", "Fantasy")
+                        .collect(Collectors.toList())));
         movies.add(new Movie("Star Wars",
                 TypeOfMovie.TRANSLATED,
                 StatusOfMovie.PRE_PREMIERE,
-                Stream.of("Action", "Fantasy", "Drama").collect(Collectors.toList())));
+                Stream.of("Action", "Fantasy", "Drama")
+                        .collect(Collectors.toList())));
         movies.add(new Movie("Game of Thrones",
                 TypeOfMovie.ORIGINAL,
                 StatusOfMovie.PREMIERE,
-                Stream.of("Horror", "Action", "Fantasy", "Historical").collect(Collectors.toList())));
+                Stream.of("Horror", "Action", "Fantasy", "Historical")
+                        .collect(Collectors.toList())));
         movies.add(new Movie("Terminator",
                 TypeOfMovie.TRANSLATED,
                 StatusOfMovie.AVAILABLE,
-                Stream.of("Drama", "Action", "Fantasy").collect(Collectors.toList())));
+                Stream.of("Drama", "Action", "Fantasy")
+                        .collect(Collectors.toList())));
         movies.add(new Movie("Zombie",
                 TypeOfMovie.ORIGINAL,
                 StatusOfMovie.PREMIERE,
-                Stream.of("Horror", "Action", "Fantasy").collect(Collectors.toList())));
+                Stream.of("Horror", "Action", "Fantasy")
+                        .collect(Collectors.toList())));
 
     }
 
@@ -59,12 +64,16 @@ public class RandomListGenerator implements RandomGenerator {
 
     private List<Hall> getHallsList() {
         List<Hall> halls = new ArrayList<>();
-        int numberOfHallsInCinema = intRandom(MIN_NUMBER_OF_HALLS_IN_CINEMA, MAX_NUMBER_OF_HALLS_IN_CINEMA);
-        classicHallNumbers.stream().limit(numberOfHallsInCinema).forEach(hallName -> {
-            int amountOfPlaces = intRandom(MIN_AMOUNT_OF_ROWS, MAX_AMOUNT_OF_ROWS) * NUMBER_OF_PLACES_IN_ONE_ROW;
-            BigDecimal price = new BigDecimal(intRandom(MIN_PRICE_DIVIDED_BY_10, MAX_PRICE_DIVIDED_BY_10) * 10);
-            halls.add(new Hall(hallName, amountOfPlaces, price));
-        });
+        int numberOfHallsInCinema = Rand.intRandom(MIN_NUMBER_OF_HALLS_IN_CINEMA, MAX_NUMBER_OF_HALLS_IN_CINEMA);
+
+        classicHallNumbers.stream()
+                .limit(numberOfHallsInCinema)
+                .forEach(hallName -> {
+                    int amountOfPlaces = Rand.intRandom(MIN_AMOUNT_OF_ROWS, MAX_AMOUNT_OF_ROWS) * NUMBER_OF_PLACES_IN_ONE_ROW;
+                    BigDecimal price = new BigDecimal(Rand.intRandom(MIN_PRICE_DIVIDED_BY_10, MAX_PRICE_DIVIDED_BY_10) * 10);
+                    halls.add(new Hall(hallName, amountOfPlaces, price));
+                });
+
         return halls;
     }
 
@@ -76,7 +85,6 @@ public class RandomListGenerator implements RandomGenerator {
     @Override
     public List<Cinema> getCinemaList() {
         return cinemas;
-
     }
 
 }

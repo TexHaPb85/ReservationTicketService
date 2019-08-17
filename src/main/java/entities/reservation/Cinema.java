@@ -1,6 +1,7 @@
 package entities.reservation;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,8 +43,10 @@ public class Cinema {
         int plusHours = 0;
         for (int j = 0; j < halls.size(); j++) {
             for (int i = 0; i < movieList.size(); i++) {
+                LocalDateTime dateOfSession = LocalDate.now().plusDays(1).atTime(9, 0).plusHours(plusHours);
                 dailyMovieSchedule.add(
-                        new ScheduledMovie(LocalDate.now().plusDays(1).atTime(9, 0).plusHours(plusHours),
+                        new ScheduledMovie(
+                                dateOfSession,
                                 this,
                                 halls.get(hallPointer),
                                 movieList.get(i)));

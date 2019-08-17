@@ -19,7 +19,7 @@ public class GlobalCinemaService {
         bookingService = new BookingService(scanner);
     }
 
-    public boolean start() {
+    private void showOptions(){
         System.out.println("Hello, " + currentUser.getLogin() + ", choose the option:\n" +
                 "1. Sign in.\n" +
                 "2. Select cinema and see its movie list.\n" +
@@ -30,6 +30,10 @@ public class GlobalCinemaService {
                 "7. Pay unpaid bookings\n" +
                 "8. Set additional info\n" +
                 "9. Exit");
+    }
+
+    public boolean start() {
+        showOptions();
         switch (scanner.next()) {
             case "1":
                 userService.logIn(scanner);

@@ -4,11 +4,11 @@ import entities.reservation.Movie;
 
 import java.util.List;
 
-public interface CinemaInterface {
+public interface SelectCinemaInterface {
 
     String showListOfCinemas();
 
-    String showShowingListInCinema(int numberOfCinema);
+    String showSessionListInCinema(int numberOfCinema);
 
     List<Movie> getMovieListInCinema(int indexOfCinema);
 }

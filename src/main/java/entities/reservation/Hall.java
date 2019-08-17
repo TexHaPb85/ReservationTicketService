@@ -1,7 +1,7 @@
 package entities.reservation;
 
+import abstractions.CinemaGenerator;
 import enums.TypeOfPlace;
-import abstractions.RandomGenerator;
 
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
@@ -33,11 +33,15 @@ public class Hall {
 
     private void fillBookedPlacesList(BigDecimal normalTicketPrice) {
         for (int i = 1; i <= amountOfPlaces; i++) {
-            if (i < amountOfPlaces / 8) {
+
+            int vipPlacesLimit = amountOfPlaces / 8;
+            int premiumPlacesLimit = amountOfPlaces / 2;
+
+            if (i < vipPlacesLimit) {
                 BigDecimal priceOfTicket = normalTicketPrice.multiply(BigDecimal.valueOf(1.5));
                 Place place = new Place(i, TypeOfPlace.VIP, priceOfTicket);
                 bookedPlaces.put(place, false);
-            } else if (i < amountOfPlaces / 2) {
+            } else if (i < premiumPlacesLimit) {
                 BigDecimal priceOfTicket = normalTicketPrice.multiply(BigDecimal.valueOf(1.2));
                 Place place = new Place(i, TypeOfPlace.PREMIUM, priceOfTicket);
                 bookedPlaces.put(place, false);
@@ -49,15 +53,13 @@ public class Hall {
     }
 
     public void showBookedPlaces() {
-        int numOfPlacesInOneRow = RandomGenerator.NUMBER_OF_PLACES_IN_ONE_ROW;
+        int numOfPlacesInOneRow = CinemaGenerator.NUMBER_OF_PLACES_IN_ONE_ROW;
 
         StringBuilder sb = new StringBuilder("\nHall: " + number + "\n");
         bookedPlaces.forEach((place, isBooked) -> {
-            if (!isBooked) {
-                sb.append(place.getType().getSigh() + place.getPlaceNumber() + " ");
-            } else {
-                sb.append("#" + place.getPlaceNumber() + " ");
-            }
+
+            sb.append(isBooked ? place.getType().getSigh() + place.getPlaceNumber() + " " : "#" + place.getPlaceNumber() + " ");
+
             if ((place.getPlaceNumber()) % numOfPlacesInOneRow == 0) {
                 sb.append("\n");
             }

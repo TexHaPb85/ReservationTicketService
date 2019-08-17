@@ -4,6 +4,7 @@ public enum Constants {
     MIN_PART_OF_MOVIE(1),
     MAX_PART_OF_MOVIE(9);
 
+
     private int val;
 
     Constants(int val) {

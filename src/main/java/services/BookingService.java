@@ -2,21 +2,20 @@ package services;
 
 import entities.User;
 import entities.reservation.*;
+import utilities.CinemaGeneratorImpl;
 import utilities.CreditCardChecker;
-import utilities.RandomListGenerator;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class BookingService {
+    private final int INITIAL_ID_VALUE = 1;
     private SelectCinemaService selectCinemaService;
     private Scanner scanner;
-
-    private final int INITIAL_ID_VALUE = 1;
     private int currentBookingId = INITIAL_ID_VALUE;
 
     public BookingService(Scanner scanner) {
-        RandomListGenerator randomGenerator = new RandomListGenerator();
+        CinemaGeneratorImpl randomGenerator = new CinemaGeneratorImpl();
 
         this.selectCinemaService = new SelectCinemaService(randomGenerator.getCinemaList());
         this.scanner = scanner;
@@ -31,7 +30,7 @@ public class BookingService {
         System.out.println(selectCinemaService.showListOfCinemas());
         int indexOfCinema = scanner.nextInt() - 1;
         Cinema cinema = selectCinemaService.getCinemaList().get(indexOfCinema);
-        System.out.println(selectCinemaService.showShowingListInCinema(indexOfCinema));
+        System.out.println(selectCinemaService.showSessionListInCinema(indexOfCinema));
 
         int indexOfMovieShowing = scanner.nextInt() - 1;
         if (indexOfMovieShowing >= 0) {
