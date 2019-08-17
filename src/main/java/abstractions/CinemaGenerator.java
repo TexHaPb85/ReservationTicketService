@@ -15,7 +15,9 @@ public interface CinemaGenerator {
     int MIN_PRICE_DIVIDED_BY_10 = 4;
     int MAX_PRICE_DIVIDED_BY_10 = 10;
     int NUMBER_OF_PLACES_IN_ONE_ROW = 10;
-    int
+
+    int VIP_PLACES_DIVIDER = 8;
+    int PREMIUM_PLACES_DIVIDER = 2;
 
     List<String> classicHallNumbers = Arrays.asList("A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3");
 
